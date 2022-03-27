@@ -10,21 +10,21 @@ function maxCrossingSum(array: Array<Card[]>, mid: number) : SumResult {
   let leftSum = 0, rightSum = 0;
   let leftHands: Array<Card[]> = [], rightHands: Array<Card[]> = [];
   mid = Math.floor(mid);
-  array.slice(0, mid).reverse().forEach(hand => {
+  array.slice(0, mid).reverse().every(hand => {
     const value = Poker.ValueHand(hand).value;
     if(value > 0) {
       leftSum += value;
       leftHands.push(hand);
     }
-    else return;
+    return value; //if 0, exit loops
   });
-  array.slice(mid).forEach(hand => {
+  array.slice(mid).every(hand => {
     const value = Poker.ValueHand(hand).value;
     if(value > 0) {
       rightSum += value;
       rightHands.push(hand);
     }
-    else return;
+    return value; //if 0, exit loops
   });
 
   return {value: leftSum + rightSum, hands: leftHands.concat(rightHands)};

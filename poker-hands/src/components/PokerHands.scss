@@ -1,0 +1,63 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small devices
+@mixin sm {
+   @media screen and (max-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+body{
+  background: #333;
+  padding: 40px 20px;
+}
+* { 
+  color: white;
+}
+.hands{
+  ul {
+    display: flex;
+    justify-content: center;
+    padding: 0 25%;
+    @include sm{
+      flex-direction: column;
+    }
+    li {
+      list-style: none;
+      @include sm{
+        max-height: 30px;
+      }
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) img{
+          rotate: calc(#{$i * +5}deg - 15deg);
+          @include sm{
+              rotate: 0deg;
+          }
+        }
+      }
+      img {
+        max-width: 200%;
+        @include sm{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+@include sm{
+  h3{
+    margin-top: 200px;
+  }
+
+
+}
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    flex: 1 1 20%;
+  }
+}
+.justify-content-center {
+  justify-content: center;
+}
+

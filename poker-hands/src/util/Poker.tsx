@@ -1,4 +1,4 @@
-import Card from './card';
+import Card from '../models/card';
 
 class Poker {
   static STRAIGHT_FLUSH = {name: "Straight Flush", value: 8000000};

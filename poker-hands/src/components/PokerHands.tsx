@@ -23,10 +23,11 @@ const PokerHands = () => {
       )
   return (
     <div className="hands">
+      <h3>Mãos</h3>
       <div className="d-flex">
         {pokerHands.map(handMap)}
       </div>
-      <h3>Melhor sequência de mãos</h3>
+      <h3 className="mt-200">Melhor sequência de mãos</h3>
       <div className="d-flex justify-content-center">
         {maxSubArraySum(pokerHands).hands.map(handMap)}
       </div>

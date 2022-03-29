@@ -5,7 +5,7 @@ import maxSubArraySum from '../util/maxSubArraySum';
 import "./PokerHands.scss";
 const PokerHands = () => {
   const deck = new Deck();
-  const nHands = 100;
+  const nHands = 10;
   let pokerHands : Array <Array<Card>> = [];
   for (let i = 0; i < nHands; i++) {
     pokerHands.push(deck.drawHand());   
